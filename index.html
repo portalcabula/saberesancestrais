@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabula.org - Tradição Afro-Brasileira | Cursos de Sabedoria Ancestral</title>
+    <meta name="description" content="Descubra a Cabula, a tradição filosófica afro-brasileira mais antiga. Cursos de autoconhecimento, práticas ancestrais e crescimento espiritual.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== Design System Variables ===== */
+        :root {
+            /* Colors */
+            --background: 0 0% 100%;
+            --foreground: 240 10% 3.9%;
+            --primary: 262 83% 58%;
+            --primary-foreground: 0 0% 100%;
+            --primary-light: 270 100% 85%;
+            --primary-glow: 280 80% 70%;
+            --secondary: 240 4.8% 95.9%;
+            --secondary-foreground: 240 5.9% 10%;
+            --muted: 240 4.8% 95.9%;
+            --muted-foreground: 240 3.8% 46.1%;
+            --accent: 240 4.8% 95.9%;
+            --accent-foreground: 240 5.9% 10%;
+            --border: 240 5.9% 90%;
+            --card: 0 0% 100%;
+            --card-foreground: 240 10% 3.9%;
+            
+            /* Radius */
+            --radius: 0.5rem;
+        }
+        
+        /* ===== Reset & Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ===== Utility Classes ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .shadow-glow {
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .shadow-elegant {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .transition-smooth {
+            transition: all 0.3s ease;
+        }
+        
+        /* ===== Header Styles ===== */
+        header {
+            background: hsla(var(--background), 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid hsl(var(--border));
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-circle {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            font-size: 0.75rem;
+            color: hsl(var(--muted-foreground));
+        }
+        
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: hsl(var(--foreground));
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: hsl(var(--primary));
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .quote {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+            font-style: italic;
+        }
+        
+        /* ===== Button Styles ===== */
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .btn-lg {
+            padding: 1.5rem 2rem;
+            font-size: 1.125rem;
+        }
+        
+        /* ===== Hero Section ===== */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.6), transparent);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding: 5rem 0;
+            max-width: 48rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius);
+            color: white;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 42rem;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+        }
+        
+        /* ===== Section Styles ===== */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-bg {
+            background: hsl(var(--muted) / 0.3);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-description {
+            font-size: 1.25rem;
+            color: hsl(var(--muted-foreground));
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+        
+        /* ===== Card Grid ===== */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        /* ===== Course Card Styles ===== */
+        .card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .card.featured {
+            border-color: hsl(var(--primary));
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-image {
+            position: relative;
+            width: 100%;
+            height: 12rem;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            color: white;
+            border-radius: var(--radius);
+            font-size: 0.875rem;
+        }
+        
+        .card-price {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover .card-title {
+            color: hsl(var(--primary));
+        }
+        
+        .card-description {
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 1rem;
+        }
+        
+        .card-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .card-instructor {
+            font-size: 0.875rem;
+            color: hsl(var(--primary));
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .card-footer {
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .card-footer .btn {
+            width: 100%;
+        }
+        
+        /* ===== Value Cards ===== */
+        .value-card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-icon {
+            width: 4rem;
+            height: 4rem;
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1);
+        }
+        
+        .value-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover .value-title {
+            color: hsl(var(--primary));
+        }
+        
+        .value-description {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+        
+        /* ===== About Section ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            font-size: 1.125rem;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .mission-box {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+        }
+        
+        .mission-box h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: hsl(var(--primary));
+            margin-bottom: 0.5rem;
+        }
+        
+        .mission-box p {
+            color: hsl(var(--muted-foreground));
+            margin: 0;
+        }
+        
+        .quote-box {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .quote-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: hsl(var(--primary));
+            margin-bottom: 1rem;
+        }
+        
+        .quote-box p {
+            font-size: 1.125rem;
+            color: hsl(var(--muted-foreground));
+            margin: 0;
+        }
+        
+        /* ===== Testimonials ===== */
+        .testimonial-card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+        
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .star {
+            color: #EAB308;
+        }
+        
+        .testimonial-quote {
+            color: hsl(var(--muted-foreground));
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .testimonial-author {
+            border-top: 1px solid hsl(var(--border));
+            padding-top: 1rem;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: hsl(var(--primary));
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover .author-name {
+            color: hsl(var(--primary-light));
+        }
+        
+        .author-role {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+        
+        /* ===== Footer ===== */
+        footer {
+            background: hsl(var(--primary));
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+        
+        .footer-brand p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+        
+        .footer-description {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .newsletter {
+            margin-top: 1.5rem;
+        }
+        
+        .newsletter h5 {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: white;
+        }
+        
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            nav, .quote {
+                display: none;
+            }
+            
+            .about-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-circle">C</div>
+                    <div class="logo-text">
+                        <h1>CABULA.ORG</h1>
+                        <p>Sanzala Kassambe</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <a href="#home">Home</a>
+                    <a href="#cursos">Cursos</a>
+                    <a href="#historia">Nossa História</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <span class="quote">"Intolerância se combate com conhecimento"</span>
+                    <button class="btn btn-primary">Pesquise aqui</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg" style="background-image: url('hero-background.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">✨ Tradição Afro-Brasileira Ancestral</span>
+                
+                <h1>
+                    Descubra a<br>
+                    <span class="gradient-text">Sabedoria Ancestral</span>
+                </h1>
+                
+                <p>
+                    Explore a Cabula, o mais antigo sistema filosófico afro-brasileiro. 
+                    Conecte-se com sua ancestralidade através de cursos, práticas e 
+                    conhecimentos milenares que transformam vidas.
+                </p>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg">Comece sua Jornada</button>
+                    <button class="btn btn-outline btn-lg">Conheça Nossa História</button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Estudantes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">15+</div>
+                        <div class="stat-label">Cursos</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">10+</div>
+                        <div class="stat-label">Anos de Tradição</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Courses Section -->
+    <section id="cursos" class="section-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Nossos <span class="gradient-text">Cursos</span>
+                </h2>
+                <p class="section-description">
+                    Desenvolvemos cursos com base na Cabula para promover autoconhecimento 
+                    e crescimento espiritual através da sabedoria ancestral.
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Course 1 - Featured -->
+                <div class="card featured">
+                    <div class="card-image">
+                        <img src="course-symbols.jpg" alt="Fundamentos da Cabula">
+                        <span class="card-badge">⭐ Destaque</span>
+                        <span class="card-price">R$ 197</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Fundamentos da Cabula</h3>
+                        <p class="card-description">
+                            Introdução completa à tradição filosófica afro-brasileira mais antiga do Brasil. 
+                            Conheça os princípios básicos e a história da Cabula.
+                        </p>
+                        <div class="card-meta">
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <span>8 semanas</span>
+                            </div>
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>234 estudantes</span>
+                            </div>
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <p class="card-instructor">Com Alufá Baralejinan</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Inscrever-se Agora</button>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="course-teacher.jpg" alt="Panteão Mahamba e Bakulo">
+                        <span class="card-price">R$ 147</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Panteão Mahamba e Bakulo</h3>
+                        <p class="card-description">
+                            Estudo profundo das divindades regentes da Criação e dos ancestrais 
+                            divinizados na tradição da Cabula.
+                        </p>
+                        <div class="card-meta">
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <span>6 semanas</span>
+                            </div>
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>156 estudantes</span>
+                            </div>
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <p class="card-instructor">Com Mameto Sobá</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Inscrever-se Agora</button>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="course-community.jpg" alt="Práticas Ancestrais">
+                        <span class="card-price">R$ 247</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Práticas Ancestrais</h3>
+                        <p class="card-description">
+                            Aprenda rituais de autoconhecimento, benzimentos e práticas espirituais 
+                            da tradição afro-brasileira.
+                        </p>
+                        <div class="card-meta">
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <span>10 semanas</span>
+                            </div>
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>89 estudantes</span>
+                            </div>
+                            <div class="card-meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                </svg>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                        <p class="card-instructor">Com Tata Kambondo</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Inscrever-se Agora</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary btn-lg">Ver Todos os Cursos</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="historia">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>
+                        Nossa <span class="gradient-text">História</span>
+                    </h2>
+                    <p>
+                        A Sanzala Kassambe é uma entidade sem fins lucrativos que tem por objetivo 
+                        promover o autoconhecimento com o propósito de desenvolver a consciência do 
+                        indivíduo, tornando-o capaz de expressar de forma harmônica sua natureza e 
+                        manifestar seu potencial latente.
+                    </p>
+                    <p>
+                        Através do estudo, da reflexão, da prática e do voluntariado com base na 
+                        Cabula - sistema filosófico afro-brasileiro - conduzimos cada pessoa a um 
+                        processo de reencontro com sua ancestralidade.
+                    </p>
+                    
+                    <div class="mission-box">
+                        <h3>Nossa Missão</h3>
+                        <p>
+                            Promover a Cabula como sistema filosófico afro-brasileiro capaz de 
+                            desenvolver o crescimento pessoal e espiritual do indivíduo, inspirando 
+                            a construção de uma humanidade mais justa, harmônica e responsável.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-2">
+                    <!-- Value 1 -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Conhecimento</h3>
+                        <p class="value-description">
+                            Preservamos e compartilhamos a sabedoria ancestral da tradição afro-brasileira
+                        </p>
+                    </div>
+                    
+                    <!-- Value 2 -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Voluntariado</h3>
+                        <p class="value-description">
+                            Promovemos ações solidárias e o crescimento coletivo da nossa comunidade
+                        </p>
+                    </div>
+                    
+                    <!-- Value 3 -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M15 10v.01"/>
+                                <path d="M9 10v.01"/>
+                                <path d="M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 18l2.5 2.5L17 18l3 3V10a8 8 0 0 0-8-8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Fé Racionalizada</h3>
+                        <p class="value-description">
+                            Unimos espiritualidade com conhecimento científico e reflexão crítica
+                        </p>
+                    </div>
+                    
+                    <!-- Value 4 -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Transformação</h3>
+                        <p class="value-description">
+                            Buscamos o desenvolvimento pessoal e espiritual através do autoconhecimento
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                <h3>"Intolerância se combate com conhecimento"</h3>
+                <p>Este é o nosso lema e a base de tudo que fazemos na Sanzala Kassambe.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="gradient-text">Depoimentos</span>
+                </h2>
+                <p class="section-description">
+                    Veja o que nossos estudantes dizem sobre suas experiências transformadoras
+                </p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "A experiência de aprender sobre a Cabula transformou completamente minha 
+                        perspectiva de vida. O conhecimento ancestral me trouxe paz interior e propósito."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Maria Santos</div>
+                        <div class="author-role">Estudante de Fundamentos</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "Encontrei na Sanzala Kassambe uma família espiritual. Os ensinamentos são 
+                        profundos e o método de ensino é excepcional."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">João Oliveira</div>
+                        <div class="author-role">Participante há 2 anos</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <blockquote class="testimonial-quote">
+                        "Os rituais de autocuidado e benzimento mudaram minha vida. Sinto-me mais 
+                        conectada com minha ancestralidade e com a natureza."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-name">Ana Costa</div>
+                        <div class="author-role">Curso de Práticas Ancestrais</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <div class="footer-logo">C</div>
+                        <div>
+                            <h3>CABULA.ORG</h3>
+                            <p>Sanzala Kassambe</p>
+                        </div>
+                    </div>
+                    
+                    <p class="footer-description">
+                        Promovendo o autoconhecimento e crescimento espiritual através da 
+                        sabedoria ancestral da tradição afro-brasileira mais antiga do Brasil.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#cursos">Cursos</a></li>
+                        <li><a href="#historia">Nossa História</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Contato</h4>
+                    <ul class="footer-links">
+                        <li>(21) 99008-3390</li>
+                        <li>contato@cabula.org</li>
+                        <li>São Paulo, SP</li>
+                    </ul>
+                    
+                    <div class="newsletter">
+                        <h5>Newsletter</h5>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Seu email" class="newsletter-input">
+                            <button type="submit" class="btn btn-primary">OK</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div>© 2024 Cabula.org - Sanzala Kassambe. Todos os direitos reservados.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

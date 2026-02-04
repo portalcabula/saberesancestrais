@@ -426,6 +426,384 @@
         
         .card-footer .btn {
             width: 100%;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+        }
+        
+        .card-footer .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        /* ===== Modal Styles ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        /* Modal 1 - Clássico Centralizado */
+        .modal-1 .modal-content {
+            position: relative;
+            background: white;
+            margin: auto;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.3s ease;
+        }
+        
+        /* Modal 2 - Slide Up */
+        .modal-2 {
+            align-items: flex-end;
+        }
+        
+        .modal-2 .modal-content {
+            background: white;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2.5rem;
+            border-radius: 1.5rem 1.5rem 0 0;
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.3s ease;
+        }
+        
+        /* Modal 3 - Blur Background + Scale */
+        .modal-3 {
+            backdrop-filter: blur(10px);
+            background-color: rgba(139, 92, 246, 0.2);
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-3 .modal-content {
+            background: linear-gradient(135deg, white 0%, #f8f7ff 100%);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            max-width: 700px;
+            width: 90%;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            box-shadow: 0 25px 70px rgba(139, 92, 246, 0.4);
+            animation: scaleIn 0.3s ease;
+        }
+        
+        /* Modal 4 - Side Panel */
+        .modal-4 {
+            justify-content: flex-end;
+        }
+        
+        .modal-4 .modal-content {
+            background: white;
+            height: 100%;
+            width: 500px;
+            max-width: 90%;
+            padding: 3rem 2.5rem;
+            overflow-y: auto;
+            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+            animation: slideLeft 0.3s ease;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: hsl(var(--primary));
+            background: rgba(139, 92, 246, 0.1);
+            transform: rotate(90deg);
+        }
+        
+        .modal-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: hsl(var(--primary));
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-instructor {
+            font-size: 1rem;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 1rem;
+        }
+        
+        .modal-price {
+            display: inline-block;
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-body p {
+            line-height: 1.8;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 1rem;
+        }
+        
+        .modal-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .modal-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: hsl(var(--foreground));
+        }
+        
+        .modal-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: hsl(var(--primary));
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes slideLeft {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        
+        /* Modal 5 - Split Screen */
+        .modal-5 {
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-5 .modal-content {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            max-width: 1000px;
+            width: 90%;
+            max-height: 85vh;
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            animation: splitOpen 0.5s ease;
+        }
+        
+        .modal-5 .modal-left {
+            background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            padding: 3rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .modal-5 .modal-right {
+            padding: 3rem;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        /* Modal 6 - Flip/Newspaper Effect */
+        .modal-6 {
+            align-items: center;
+            justify-content: center;
+            perspective: 1500px;
+        }
+        
+        .modal-6 .modal-content {
+            background: white;
+            max-width: 650px;
+            width: 90%;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: flip3D 0.6s ease;
+            transform-style: preserve-3d;
+        }
+        
+        /* Modal 7 - Curtain Effect */
+        .modal-7 {
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-7 .modal-content {
+            background: white;
+            max-width: 750px;
+            width: 90%;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+            animation: curtainReveal 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal-7 .modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(280 80% 70%) 100%);
+            animation: curtainSlide 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            z-index: 1;
+        }
+        
+        .modal-7 .modal-inner {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Modal 8 - Glassmorphism */
+        .modal-8 {
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(15px);
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-8 .modal-content {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            max-width: 700px;
+            width: 90%;
+            padding: 3rem;
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3), 
+                        0 30px 60px rgba(0, 0, 0, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            animation: glassAppear 0.4s ease;
+        }
+        
+        @keyframes splitOpen {
+            from {
+                opacity: 0;
+                transform: scale(0.8) rotateY(10deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+            }
+        }
+        
+        @keyframes flip3D {
+            from {
+                opacity: 0;
+                transform: rotateX(-90deg) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: rotateX(0deg) scale(1);
+            }
+        }
+        
+        @keyframes curtainReveal {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes curtainSlide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        @keyframes glassAppear {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
         }
         
         /* ===== Value Cards ===== */
@@ -746,6 +1124,15 @@
         }
         
         @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .hero-title {
+                font-size: 1.75rem !important;
+            }
+            
             .hero-actions {
                 flex-direction: column;
             }
@@ -777,9 +1164,8 @@
                 
                 <nav>
                     <a href="#home">Home</a>
-                    <a href="#sobre">Sobre o Instituto Cabula</a>
-                    <a href="#programa">Nossos Programas</a>
-                    <a href="#cursos">Cursos</a>                 
+                    <a href="#cursos">Cursos</a>
+                    <a href="#historia">Nossa Missão</a>
                     <a href="#contato">Contato</a>
                 </nav>
                 
@@ -800,41 +1186,46 @@
         <div class="hero-overlay"></div>
     </div>
     
-    <div class="container">
-        <div class="hero-content">
+    <div class="container" style="max-width: none; padding: 0;">
+        <div class="hero-content" style="display: grid; grid-template-columns: 2fr 1fr; gap: 0; align-items: center; max-width: none; padding: 3rem 0 3rem 4rem;">
+            
+            <!-- Conteúdo de texto e botões -->
+            <div style="padding: 0 3rem 0 8rem;">
+                <!-- Headline -->
+                <h2 class="hero-title" style="text-align: left; margin-top: 0; font-size: 2.5rem; line-height: 1.4; font-weight: 700;">
+                    Cuidar da Infância.<br>
+                    Fortalecer Mulheres.<br>
+                    Honrar a Ancestralidade.
+                </h2>
+
+                <!-- Subtítulo -->
+                <p class="hero-subtitle" style="text-align: left; margin: 2rem 0 2.5rem; font-size: 1.15rem; line-height: 1.6;">
+                    O Instituto Cabula de Ancestralidade, Educação e Autonomia promove transformação social
+                    por meio da educação integral, do fortalecimento econômico de mulheres e famílias,
+                    e do resgate das tradições afro-brasileiras e indígenas.
+                </p>
+
+                <!-- CTA -->
+                <div class="hero-actions" style="display: flex; flex-direction: column; gap: 1rem; align-items: flex-start;">
+                    <button class="btn btn-primary btn-lg" style="padding: 1.2rem 2.5rem; font-size: 1rem;">
+                        Junte-se a nós e plante hoje as sementes de um futuro ancestral
+                    </button>
+                    <a href="#historia" class="btn btn-outline btn-lg" style="padding: 1.2rem 2.5rem; font-size: 1rem;">
+                        Conheça Nossa História
+                    </a>
+                </div>
+            </div>
 
             <!-- Logo principal -->
-            <h1 style="text-align:center;">
+            <div style="text-align: center; padding-left: 8rem;">
                 <img 
                     src="imagens/logo2.png" 
                     alt="Instituto Cabula – Ancestralidade, Educação e Autonomia" 
-                    style="width:950px; height:auto;"
+                    style="width: 1200px; height: auto; margin-left: -150px;"
                 />
-            </h1>
-
-            <!-- Headline -->
-            <h2 class="hero-title" style="text-align:center; margin-top:1.5rem;">
-                Cuidar da Infância. Fortalecer Mulheres. Honrar a Ancestralidade.
-            </h2>
-
-            <!-- Subtítulo -->
-            <p class="hero-subtitle" style="text-align:center; max-width:900px; margin:1rem auto 2rem;">
-                O Instituto Cabula de Ancestralidade, Educação e Autonomia promove transformação social
-                por meio da educação integral, do fortalecimento econômico de mulheres e famílias,
-                e do resgate das tradições afro-brasileiras e indígenas.
-            </p>
-
-            <!-- CTA -->
-            <div class="hero-actions">
-                <button class="btn btn-primary btn-lg">
-                    Junte-se a nós e plante hoje as sementes de um futuro ancestral
-                </button>
-                <a href="#historia" class="btn btn-outline btn-lg">
-                    Conheça Nossa História
-                </a>
             </div>
 
-            </div>
+        </div>
     </div>
 </section>
 
@@ -851,20 +1242,23 @@ Os Círculos de Saberes da ESA são espaços de formação, escuta e experiênci
 Cada círculo é uma jornada, um território de memória e transformação, onde o aprendizado acontece em comunhão — corpo, mente e espírito em movimento.
 
                 </p>
+                <div style="margin-top: 2rem;">
+                    <button class="btn btn-primary btn-lg" style="padding: 1rem 3rem; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);">Como se inscrever?</button>
+                </div>
             </div>
             
             <div class="grid grid-3">
                 <!-- Course 1 - Featured -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="imagens/hero-background.jpg" alt="Descrição da imagem" />
+                        <img src="imagens/circulo-externo.jpg" alt="Círculo Externo" />
 
                         
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">Medicina Ancestral</h3>
+                        <h3 class="card-title">Círculo Externo</h3>
                         <p class="card-description">
-                            Mergulho nas práticas tradicionais de cuidado que unem ervas, rezas, orações, banhos, defumações, encantamentos e rituais de equilíbrio energético.
+                            Um primeiro passo para conhecer a sua ancestralidade. Descubra as raízes, histórias e saberes que moldaram sua existência e conecte-se com as tradições que atravessam gerações.
                         </p>
                         <div class="card-meta">
                             <div class="card-meta-item">
@@ -872,7 +1266,7 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <circle cx="12" cy="12" r="10"/>
                                     <polyline points="12 6 12 12 16 14"/>
                                 </svg>
-                                <span>xx semanas</span>
+                                <span>40 semanas</span>
                             </div>
                             <div class="card-meta-item">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -881,29 +1275,22 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                                 </svg>
-                                <span>xxx estudantes</span>
-                            </div>
-                            <div class="card-meta-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                </svg>
-                            
+                                <span>R$ 100/mês</span>
                             </div>
                         </div>
                         <p class="card-instructor">Com Alufá Baralejinan</p>
                     </div>
                     <div class="card-footer">
-                            <a href="https://portalcabula.github.io/saberesancestrais/Medicina%20Ancestral.html" 
-                            class="btn btn-primary" target="_blank">
+                            <button class="btn btn-primary" onclick="openModal('modal1')">
                             Saber mais
-                        </a>
+                        </button>
                     </div>
                 </div>
                 
                 <!-- Course 2 -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="imagens/hero-background.jpg" alt="Descrição da imagem" />
+                        <img src="imagens/anatomia-espiritual.jpg" alt="Anatomia Espiritual" />
 
                         
                     </div>
@@ -918,7 +1305,7 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <circle cx="12" cy="12" r="10"/>
                                     <polyline points="12 6 12 12 16 14"/>
                                 </svg>
-                                <span>xx semanas</span>
+                                <span>20 semanas</span>
                             </div>
                             <div class="card-meta-item">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -927,35 +1314,28 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                                 </svg>
-                                <span>xx estudantes</span>
-                            </div>
-                            <div class="card-meta-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                </svg>
-                                
+                                <span>R$ 120/mês</span>
                             </div>
                         </div>
-                        <p class="card-instructor">Com Alufá Baralejinan</p>
+                        <p class="card-instructor">Com Nganga Onileji</p>
                     </div>
                     <div class="card-footer">
-                            <a href="https://portalcabula.github.io/saberesancestrais/Anatomia%20Espiritual.html" 
-                            class="btn btn-primary" target="_blank">
+                            <button class="btn btn-primary" onclick="openModal('modal2')">
                             Saber mais
-                        </a>
+                        </button>
                     </div>
                 </div>
                 
                 <!-- Course 3 -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="imagens/hero-background.jpg" alt="Descrição da imagem" />
+                        <img src="imagens/medicina-ancestral.jpg" alt="Medicina Ancestral" />
                         
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">Ritos Propiciatórios (Sakudimento)</h3>
+                        <h3 class="card-title">Medicina Ancestral</h3>
                         <p class="card-description">
-                            Rito de propiciação e equilíbrio — um encontro entre mundos, onde se restabelece a harmonia entre o visível e o invisível.
+                            Mergulho nas práticas tradicionais de cuidado que unem ervas, rezas, orações, banhos, defumações, encantamentos e rituais de equilíbrio energético.
                         </p>
                         <div class="card-meta">
                             <div class="card-meta-item">
@@ -963,7 +1343,7 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <circle cx="12" cy="12" r="10"/>
                                     <polyline points="12 6 12 12 16 14"/>
                                 </svg>
-                                <span>xx semanas</span>
+                                <span>50 semanas</span>
                             </div>
                             <div class="card-meta-item">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -972,36 +1352,29 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                                 </svg>
-                                <span>xx estudantes</span>
-                            </div>
-                            <div class="card-meta-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                </svg>
-                                
+                                <span>R$ 150/mês</span>
                             </div>
                         </div>
                         <p class="card-instructor">Com Alufá Baralejinan</p>
                     </div>
                     <div class="card-footer">
-                            <a href="https://portalcabula.github.io/saberesancestrais/Ritos%20Propiciatórios%20(Sakudimento).html" 
-                            class="btn btn-primary" target="_blank">
+                            <button class="btn btn-primary" onclick="openModal('modal3')">
                             Saber mais
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Course 4 - NEW -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="imagens/hero-background.jpg" alt="Descrição da imagem" />
+                        <img src="imagens/ancestrais.jpg" alt="Ancestrais" />
 
                         
                     </div>
                     <div class="card-content">
-                        <h3 class="card-title">Mundos Espirituais</h3>
+                        <h3 class="card-title">Ancestrais</h3>
                         <p class="card-description">
-                            Este círculo convida à compreensão das dimensões que compõem o universo espiritual segundo as tradições africanas e ameríndias: o mundo dos vivos, dos ancestrais, dos espíritos da natureza e das forças cósmicas.
+                            Compreenda o que são os bakulos, espíritos ancestrais que guiam e protegem. Aprenda como estabelecer contato, honrar sua presença e receber orientação através da comunicação espiritual.
                         </p>
                         <div class="card-meta">
                             <div class="card-meta-item">
@@ -1009,7 +1382,7 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <circle cx="12" cy="12" r="10"/>
                                     <polyline points="12 6 12 12 16 14"/>
                                 </svg>
-                                <span>xx semanas</span>
+                                <span>10 semanas</span>
                             </div>
                             <div class="card-meta-item">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1018,29 +1391,18 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
                                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
                                     <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                                 </svg>
-                                <span>xx estudantes</span>
-                            </div>
-                            <div class="card-meta-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="gold" stroke="gold" stroke-width="2">
-                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                </svg>
-                                
+                                <span>R$ 80/mês</span>
                             </div>
                         </div>
-                        <p class="card-instructor">Com Alufá Baralejinan</p>
+                        <p class="card-instructor">Com Nganga Onileji</p>
                     </div>
                     <div class="card-footer">
-                            <a href="https://portalcabula.github.io/saberesancestrais/Mundos%20Espirituais.html" 
-                            class="btn btn-primary" target="_blank">
+                            <button class="btn btn-primary" onclick="openModal('modal4')">
                             Saber mais
-                        </a>
+                        </button>
                     </div>
 
                     
-            </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <button class="btn btn-primary btn-lg">Como se inscrever?</button>
             </div>
         </div>
     </section>
@@ -1136,6 +1498,142 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
     </section>
     
 
+    <!-- Modal 1 - Círculo Externo (Split Screen) -->
+    <div id="modal1" class="modal modal-5" onclick="if(event.target.id==='modal1') closeModal('modal1')">
+        <div class="modal-content">
+            <div class="modal-left" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('imagens/circulo-externo.jpg'); background-size: cover; background-position: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; color: white;">Círculo Externo</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; color: white;">Com Alufá Baralejinan</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem;">
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">R$ 100/mês</div>
+                    <div style="font-size: 1.1rem; opacity: 0.9; color: white;">40 semanas de jornada</div>
+                </div>
+                <p style="line-height: 1.7; opacity: 0.95; color: white;">
+                    Inicie sua jornada ancestral conectando-se com as raízes que moldaram sua existência.
+                </p>
+            </div>
+            <div class="modal-right">
+                <button class="modal-close" onclick="closeModal('modal1')" style="color: #999;">&times;</button>
+                <h3 style="font-size: 1.5rem; color: hsl(var(--primary)); margin-bottom: 1rem;">Sobre o curso</h3>
+                <p style="line-height: 1.8; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem;">
+                    Um primeiro passo para conhecer a sua ancestralidade. Descubra as raízes, histórias e saberes que moldaram sua existência e conecte-se com as tradições que atravessam gerações.
+                </p>
+                <h3 style="font-size: 1.3rem; color: hsl(var(--primary)); margin-top: 2rem; margin-bottom: 1rem;">Programa</h3>
+                <ul class="modal-list">
+                    <li>Introdução às tradições afro-brasileiras e indígenas</li>
+                    <li>Como identificar suas raizes ancestrais</li>
+                    <li>Práticas básicas de conexão espiritual</li>
+                    <li>Rituais de proteção e limpeza energética</li>
+                    <li>História e fundamentos da Cabula</li>
+                </ul>
+                <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 2rem;">Começar agora</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 - Anatomia Espiritual (Split Screen) -->
+    <div id="modal2" class="modal modal-5" onclick="if(event.target.id==='modal2') closeModal('modal2')">
+        <div class="modal-content">
+            <div class="modal-left" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('imagens/anatomia-espiritual.jpg'); background-size: cover; background-position: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; color: white;">Anatomia Espiritual</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; color: white;">Com Nganga Onileji</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem;">
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">R$ 120/mês</div>
+                    <div style="font-size: 1.1rem; opacity: 0.9; color: white;">20 semanas de jornada</div>
+                </div>
+                <p style="line-height: 1.7; opacity: 0.95; color: white;">
+                    Desvende os mistérios do corpo sutil e expanda sua consciência espiritual.
+                </p>
+            </div>
+            <div class="modal-right">
+                <button class="modal-close" onclick="closeModal('modal2')" style="color: #999;">&times;</button>
+                <h3 style="font-size: 1.5rem; color: hsl(var(--primary)); margin-bottom: 1rem;">Sobre o curso</h3>
+                <p style="line-height: 1.8; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem;">
+                    A Anatomia Espiritual revela a dimensão invisível da existência humana — os centros de força, os fluxos energéticos e os vínculos entre corpo físico, emocional e espiritual.
+                </p>
+                <h3 style="font-size: 1.3rem; color: hsl(var(--primary)); margin-top: 2rem; margin-bottom: 1rem;">Conteúdo do curso</h3>
+                <ul class="modal-list">
+                    <li>Chakras e centros de energia na tradição africana</li>
+                    <li>Anatomia dos corpos sutis</li>
+                    <li>Fluxos energéticos e sua harmonização</li>
+                    <li>Técnicas de percepção espiritual</li>
+                    <li>Equilíbrio entre corpo, mente e espírito</li>
+                    <li>Práticas de expansão da consciência</li>
+                </ul>
+                <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 2rem;">Quero me inscrever</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 - Medicina Ancestral (Split Screen) -->
+    <div id="modal3" class="modal modal-5" onclick="if(event.target.id==='modal3') closeModal('modal3')">
+        <div class="modal-content">
+            <div class="modal-left" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('imagens/medicina-ancestral.jpg'); background-size: cover; background-position: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; color: white;">Medicina Ancestral</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; color: white;">Com Alufá Baralejinan</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem;">
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">R$ 150/mês</div>
+                    <div style="font-size: 1.1rem; opacity: 0.9; color: white;">50 semanas de jornada</div>
+                </div>
+                <p style="line-height: 1.7; opacity: 0.95; color: white;">
+                    Torne-se um curador através das práticas ancestrais de medicina tradicional.
+                </p>
+            </div>
+            <div class="modal-right">
+                <button class="modal-close" onclick="closeModal('modal3')" style="color: #999;">&times;</button>
+                <h3 style="font-size: 1.5rem; color: hsl(var(--primary)); margin-bottom: 1rem;">Sobre o curso</h3>
+                <p style="line-height: 1.8; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem;">
+                    Mergulho nas práticas tradicionais de cuidado que unem ervas, rezas, orações, banhos, defumações, encantamentos e rituais de equilíbrio energético.
+                </p>
+                <h3 style="font-size: 1.3rem; color: hsl(var(--primary)); margin-top: 2rem; margin-bottom: 1rem;">Programa completo</h3>
+                <ul class="modal-list">
+                    <li>Fitoterapia e medicina com plantas sagradas</li>
+                    <li>Preparação de banhos ritualísticos</li>
+                    <li>Técnicas de defumação e limpeza espiritual</li>
+                    <li>Rezas, orações e encantamentos de cura</li>
+                    <li>Diagnóstico espiritual de desequilíbrios</li>
+                    <li>Práticas de cura energética</li>
+                    <li>Ética e responsabilidade do curador</li>
+                </ul>
+                <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 2rem;">Iniciar jornada</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 - Ancestrais (Split Screen) -->
+    <div id="modal4" class="modal modal-5" onclick="if(event.target.id==='modal4') closeModal('modal4')">
+        <div class="modal-content">
+            <div class="modal-left" style="background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('imagens/ancestrais.jpg'); background-size: cover; background-position: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; color: white;">Ancestrais</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.95; color: white;">Com Nganga Onileji</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 1rem; margin-bottom: 2rem;">
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: white;">R$ 80/mês</div>
+                    <div style="font-size: 1.1rem; opacity: 0.9; color: white;">10 semanas de jornada</div>
+                </div>
+                <p style="line-height: 1.7; opacity: 0.95; color: white;">
+                    Conecte-se com os bakulos e receba a sabedoria dos seus ancestrais.
+                </p>
+            </div>
+            <div class="modal-right">
+                <button class="modal-close" onclick="closeModal('modal4')" style="color: #999;">&times;</button>
+                <h3 style="font-size: 1.5rem; color: hsl(var(--primary)); margin-bottom: 1rem;">Sobre o curso</h3>
+                <p style="line-height: 1.8; color: hsl(var(--muted-foreground)); margin-bottom: 1.5rem;">
+                    Compreenda o que são os bakulos, espíritos ancestrais que guiam e protegem. Aprenda como estabelecer contato, honrar sua presença e receber orientação através da comunicação espiritual.
+                </p>
+                <h3 style="font-size: 1.3rem; color: hsl(var(--primary)); margin-top: 2rem; margin-bottom: 1rem;">Jornada de aprendizado</h3>
+                <ul class="modal-list">
+                    <li>O que são os bakulos (espíritos ancestrais)</li>
+                    <li>Como identificar seus ancestrais espirituais</li>
+                    <li>Técnicas de comunicação com os ancestrais</li>
+                    <li>Ritualística de honra e oferendas</li>
+                    <li>Interpretação de mensagens espirituais</li>
+                    <li>Construção de altares ancestrais</li>
+                </ul>
+                <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 2rem;">Conectar-se</button>
+            </div>
+        </div>
+    </div>
+
     
     <!-- Footer -->
     <footer>
@@ -1223,6 +1721,7 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
     </footer>
 </body>
 <script>
+    // Funções de busca
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
     const cards = document.querySelectorAll('.card');
@@ -1249,6 +1748,27 @@ Cada círculo é uma jornada, um território de memória e transformação, onde
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             searchCourses();
+        }
+    });
+    
+    // Funções dos modais
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Fechar modal ao pressionar ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const activeModal = document.querySelector('.modal.active');
+            if (activeModal) {
+                closeModal(activeModal.id);
+            }
         }
     });
 </script>

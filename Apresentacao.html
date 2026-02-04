@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Cabula</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #a64de6, #4a00f0);
+            color: #fff;
+        }
+
+        /* Topo */
+        .topo {
+            font-size: 12px;
+            letter-spacing: 2px;
+            padding: 10px 50px;
+            text-align: right;
+        }
+
+        /* Header moderno */
+        header {
+            background: rgba(0,0,0,0.6);
+            padding: 20px 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            color: #4a00f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .logo-text p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00ffc3;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .header-actions .quote {
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        #searchInput {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            width: 180px;
+            transition: 0.3s;
+        }
+
+        #searchInput:focus {
+            width: 250px;
+            box-shadow: 0 0 8px #00ffc3;
+        }
+
+        .btn-primary {
+            background-color: #007E7A;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #00ffc3;
+            color: #000;
+        }
+
+        /* Container principal - mais compacto */
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px; /* reduzido de 50px */
+            min-height: 70vh; /* reduzido de 80vh */
+            gap: 20px; /* reduzido de 40px */
+        }
+
+        .texto {
+            width: 55%;
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff9bff, #4a00f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .texto strong {
+            font-weight: 700;
+        }
+
+        .imagem {
+            width: 40%;
+        }
+
+        .imagem img {
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .imagem img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Rodapé */
+        .rodape {
+            font-size: 12px;
+            text-align: center;
+            letter-spacing: 3px;
+            padding: 20px 50px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .texto, .imagem {
+                width: 100%;
+            }
+            .imagem {
+                margin-top: 20px;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 15px;
+            }
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+            .header-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Topo antigo -->
+    <div class="topo">INSTITUTO CABULA</div>
+
+    <!-- Header moderno -->
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-circle">C</div>
+                <div class="logo-text">
+                    <h1>CABULA.ORG</h1>
+                    <p>Sanzala Kassambe</p>
+                </div>
+            </div>
+            
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre o Instituto Cabula</a>
+                <a href="#programa">Nossos Programas</a>
+                <a href="#cursos">Cursos</a>                 
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+        <div class="header-actions">
+            <span class="quote">"Intolerância se combate com conhecimento"</span>
+            <input type="text" id="searchInput" placeholder="Pesquise aqui...">
+            <button class="btn-primary" id="searchBtn">Buscar</button>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <div class="container" id="home">
+        <div class="texto">
+            <h1>1. APRESENTAÇÃO</h1>
+            <p>
+                O <strong>Instituto Cabula de Ancestralidade, Educação e Autonomia</strong> é uma Organização da Sociedade Civil (OSC) dedicada ao cuidado integral de crianças e ao empoderamento econômico e cultural de suas mães, fundamentado em uma abordagem afrocentrada e na filosofia ancestral da Cabula. Com foco na proteção social, educação, segurança alimentar e valorização da identidade afro-brasileira, o <strong>Instituto Cabula</strong> atua como um centro comunitário de desenvolvimento humano e transformação social.<br><br>
+                Este projeto apresenta o modelo institucional, os programas estruturantes, a metodologia pedagógica e comunitária, bem como estratégias de gestão e sustentabilidade para implementação do <strong>Instituto Cabula</strong>.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="imagens/app.png" alt="Crianças participando de atividades e aperto de mãos com um adulto">
+        </div>
+    </div>
+
+    <!-- Seção Justificativa -->
+    <div class="container" id="sobre">
+        <div class="texto">
+            <h1>2. JUSTIFICATIVA</h1>
+            <p>
+                A realidade social brasileira evidencia profundas desigualdades raciais, econômicas e de acesso à educação. Mulheres negras, particularmente mães solo, representam um dos grupos mais vulnerabilizados do país, enfrentando desemprego, informalidade, baixa remuneração e sobrecarga de trabalho doméstico e de cuidado. Consequentemente, crianças dessas famílias têm menor acesso a ambientes educativos de qualidade e estão mais expostas a riscos sociais.<br><br>
+                Paralelamente, práticas ancestrais afro-brasileiras e indígenas, que constituem base fundamental da identidade cultural nacional, permanecem marginalizadas. A ausência de espaços que promovam cuidados integrais alinhados à valorização das ancestralidades contribui para que crianças cresçam desconectadas de suas origens, o que repercute negativamente na autoestima, na identidade e no sentimento de pertencimento.<br><br>
+                Diante desse cenário, o <strong>Instituto Cabula</strong> propõe um modelo inovador que integra cuidado infantil, capacitação profissional, segurança alimentar e fortalecimento da ancestralidade. O projeto reconhece que o desenvolvimento pleno de uma criança está profundamente vinculado à autonomia econômica e ao bem-estar emocional de sua mãe, bem como à existência de uma comunidade fortalecida culturalmente.
+            </p>
+        </div>
+        <div class="imagem">
+            <img src="imagens/app2.png" alt="Criança brincando em ambiente ao ar livre">
+        </div>
+    </div>
+
+    <!-- Seção Missão, Visão e Valores -->
+    <div class="container" id="programa" style="flex-direction: column; gap: 20px;">
+        <div class="texto">
+            <h1>Missão</h1>
+            <p>Promover o desenvolvimento integral de crianças e a autonomia financeira de suas mães por meio da educação, da ancestralidade afrocentrada e de ações integradas de cuidado, cultura e segurança alimentar.</p>
+
+            <h1>Visão</h1>
+            <p>Ser referência nacional em práticas afrocentradas de cuidado, educação e empoderamento comunitário, fortalecendo a ancestralidade como ferramenta de transformação social.</p>
+
+            <h1>Valores</h1>
+            <ul>
+                <li>Ancestralidade e espiritualidade comunitária</li>
+                <li>Afrocentricidade</li>
+                <li>Autonomia econômica</li>
+                <li>Educação integral</li>
+                <li>Cultura e identidade</li>
+                <li>Solidariedade e comunidade</li>
+                <li>Sustentabilidade</li>
+            </ul>
+        </div>
+
+        <div class="imagem" style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+            <img src="imagens/app3.png" alt="Atividades educativas" style="width: 30%; border-radius: 20px;">
+            <img src="imagens/app4.png" alt="Capacitação de mulheres" style="width: 30%; border-radius: 20px;">
+            <img src="imagens/app5.png" alt="Crianças felizes" style="width: 30%; border-radius: 20px;">
+        </div>
+    </div>
+    <!-- Seção Objetivos -->
+<div class="container" id="objetivos" style="flex-direction: column; gap: 20px;">
+    <div class="texto">
+        <h1>4. OBJETIVOS</h1>
+
+        <h2>4.1 Objetivo Geral</h2>
+        <p>
+            Garantir o desenvolvimento integral de crianças e promover a autonomia financeira e o fortalecimento cultural de suas mães, através de programas educativos, profissionalizantes e comunitários com base na filosofia ancestral da Cabula.
+        </p>
+
+        <h2>4.2 Objetivos Específicos</h2>
+        <ul>
+            <li>Oferecer cuidado infantil em tempo integral, com abordagem pedagógica afrocentrada.</li>
+            <li>Promover capacitação profissional de mulheres para inserção no mercado de trabalho ou empreendedorismo.</li>
+            <li>Garantir segurança alimentar às famílias cadastradas.</li>
+            <li>Implementar programas de valorização da ancestralidade e da cultura afro-indígena.</li>
+            <li>Desenvolver oficinas e formações para funcionários baseadas nos princípios da educação afrocentrada.</li>
+            <li>Criar uma horta urbana comunitária para abastecimento das famílias e educação ambiental.</li>
+            <li>Fortalecer vínculos familiares e comunitários por meio de atividades culturais, palestras, ritos e celebração de datas tradicionais.</li>
+        </ul>
+    </div>
+</div>
+<!-- Seção Público-Alvo -->
+ <div class="container" id="objetivos" style="flex-direction: column; gap: 20px;">
+    <div class="texto">
+        <h1>5. PÚBLICO-ALVO</h1>
+
+    <div class="publico-grid" style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+        
+        <!-- Crianças -->
+        <div class="publico-item" style="display: flex; align-items: center; gap: 15px; width: 300px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 15px;">
+            <img src="imagens/criancas.png" alt="Crianças" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            <p><strong>Crianças:</strong> Crianças de 0 a 12 anos, prioritariamente negras, em situação de vulnerabilidade social.</p>
+        </div>
+
+        <!-- Mães -->
+        <div class="publico-item" style="display: flex; align-items: center; gap: 15px; width: 300px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 15px;">
+            <img src="imagens/maes.png" alt="Mães" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            <p><strong>Mães:</strong> Mães, especialmente mães solo, desempregadas ou com baixa renda.</p>
+        </div>
+
+        <!-- Comunidade -->
+        <div class="publico-item" style="display: flex; align-items: center; gap: 15px; width: 300px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 15px;">
+            <img src="imagens/comunidade.png" alt="Comunidade" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            <p><strong>Comunidade:</strong> Comunidade do entorno em atividades abertas, quando cabível.</p>
+        </div>
+
+    </div>
+</div>
+<!-- Seção Estrutura dos Programas -->
+<div class="container" id="objetivos" style="flex-direction: column; gap: 20px;">
+    <div class="texto">
+        <h1>6. ESTRUTURA DOS PROGRAMAS</h1>
+
+    <!-- Programa de Desenvolvimento Integral Infantil -->
+    <div class="programa-item" style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; justify-content: center;">
+
+        <!-- Texto do programa -->
+        <div class="texto" style="flex: 1 1 400px; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 15px;">
+            <h2>6.1 Programa de Desenvolvimento Integral Infantil</h2>
+            <p><strong>Espaço de Cuidado (Tempo Integral)</strong><br>
+            O programa constitui o eixo central da atuação do Instituto Cabula, oferecendo um ambiente seguro, acolhedor e afrocentrado, com acompanhamento pedagógico e emocional.</p>
+
+            <h3>Componentes do atendimento infantil</h3>
+            <ul>
+                <li>Estimulação essencial (0–3 anos)</li>
+                <li>Atividades pedagógicas de letramento e numeracia</li>
+                <li>Artes e expressões afro-brasileiras</li>
+                <li>Música ancestral (instrumentos tradicionais, cantos, ritmos)</li>
+                <li>Contação de histórias e mitologias afro-indígenas</li>
+                <li>Brincadeiras tradicionais de matriz africana</li>
+                <li>Capoeira, dança afro e outras práticas corporais</li>
+                <li>Educação socioemocional com referência ancestral</li>
+                <li>Acompanhamento nutricional</li>
+                <li>Rodas de ancestralidade diárias</li>
+            </ul>
+        </div>
+
+        <!-- Imagem do programa -->
+        <div class="imagem" style="flex: 1 1 300px; display: flex; justify-content: center;">
+            <figure>
+                <img src="imagens/programa_infantil.png" alt="Crianças participando de atividades do Programa de Desenvolvimento Integral Infantil" style="width: 250px; border-radius: 20px;">
+                <figcaption>Programa de Desenvolvimento Integral Infantil do Instituto Cabula</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- Rodapé -->
+    <div class="rodape">ANCESTRALIDADE, EDUCAÇÃO E AUTONOMIA</div>
+
+    <script>
+        // Scroll suave para menu
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
